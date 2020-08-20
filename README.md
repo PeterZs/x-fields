@@ -1,5 +1,5 @@
 # X-Fields: Implicit Neural View-, Light- and Time-Image Interpolation.
-<img src = "img/teaser2.gif" width="1000">
+<img src = "img/teaser.gif" width="1000">
 
 
 ## Requirements
