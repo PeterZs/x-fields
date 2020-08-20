@@ -27,10 +27,6 @@
                      --br         # baseline ratio (in case of 2D light field)   
                      --savepath   # saving path 
 ```
-Example for light view time interpolation:
-```
-python train.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\pomegranate
-```
 Example for view interpolation:
 ```
 python train.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\splash --nfg 8 --sigma 0.1 --num_n 2 --br 1
@@ -41,29 +37,28 @@ python train.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 -
 
 Example for time interpolation:
 ```
-python train.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 8 --num_n 2 --savepath outputs\juice
+python train.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\juice --sigma 0.5
 ```
-    
+Example for light view time interpolation:
+```
+python train.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\pomegranate
+```   
 
 ### Testing 
 
-1. For the testing, please run the test.py and it will output a continuous interpolation along each xfields dimension:
+1. For testing, please run the test.py and it will generate vidoes containing continuous interpolation along each xfields dimension:
 
-Example for light view time interpolation:
-```
-python test.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 8 --savepath outputs\pomegranate
-```
 Example for view interpolation:
 ```
 python test.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\splash --nfg 8 --sigma 0.1 --num_n 4 --br 1
 
 ```
-<img src = "https://rargan.mpi-inf.mpg.de/dataset/splash/rendered_view.gif" width="128">
-
 Example for time interpolation:
 ```
-python test.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 8 --num_n 2 --savepath outputs\juice
+python test.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\juice --sigma 0.1
 ```
-<img src = "https://rargan.mpi-inf.mpg.de/dataset/juice.gif" width="128">
-
+Example for light view time interpolation:
+```
+python test.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 8 --savepath outputs\pomegranate
+```
    
