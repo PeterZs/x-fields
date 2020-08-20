@@ -29,15 +29,15 @@
 ```
 Example for view interpolation:
 ```
-python train.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\splash --nfg 8 --sigma 0.1 --num_n 2 --br 1
+python train.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\view\splash --nfg 8 --sigma 0.1 --num_n 2 --br 1
 ```
 Example for time interpolation:
 ```
-python train.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\juice --sigma 0.5
+python train.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\time\juice --sigma 0.5
 ```
 Example for light view time interpolation:
 ```
-python train.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\pomegranate
+python train.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\light_view_time\pomegranate
 ```   
 
 ### Testing 
@@ -46,15 +46,15 @@ python train.py --dataset dataset\light_view_time\pomegranate  --type light view
 
 Example for view interpolation:
 ```
-python test.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\splash --nfg 8 --sigma 0.1 --num_n 4 --br 1
+python test.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\view\splash --nfg 8 --sigma 0.1 --num_n 4 --br 1
 
 ```
 Example for time interpolation:
 ```
-python test.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\juice --sigma 0.1
+python test.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\time\juice --sigma 0.1
 ```
 Example for light view time interpolation:
 ```
-python test.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 8 --savepath outputs\pomegranate
+python test.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 8 --savepath outputs\light_view_time\pomegranate
 ```
    
