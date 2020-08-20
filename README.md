@@ -31,10 +31,6 @@ Example for view interpolation:
 ```
 python train.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\splash --nfg 8 --sigma 0.1 --num_n 2 --br 1
 ```
-| <img src = "https://rargan.mpi-inf.mpg.de/dataset/splash/epoch_flows.gif" width='256'> | <img src = "https://rargan.mpi-inf.mpg.de/dataset/splash/epoch_recons.gif" width='256'> | <img src = "https://rargan.mpi-inf.mpg.de/dataset/splash/reference.png" width='256'> | 
-|------|:-----:|:-----:|
-| Generated flow in each epochs | Reconstructed view in each epoch| Reference |
-
 Example for time interpolation:
 ```
 python train.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\juice --sigma 0.5
