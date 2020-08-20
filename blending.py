@@ -125,9 +125,9 @@ def Blending_test(coord_in,
         warped_albedo     = bilinear_sampler_2d(albedo              ,forward_albedo)
     
         
-        backward_shading = delta_view*warped_view_flow + warped_time_flow*time_flow + warped_light_flow*light_flow 
-        backward_albedo  = delta_view*warped_view_flow + warped_time_flow*time_flow 
-    
+        backward_shading = delta_view*warped_view_flow + delta_time*warped_time_flow + delta_light*warped_light_flow 
+        backward_albedo  = delta_view*warped_view_flow + delta_time*warped_time_flow 
+     
         
         
         dist_shading       = tf.reduce_sum(tf.abs(backward_shading-forward_shading),-1,keepdims=True)
