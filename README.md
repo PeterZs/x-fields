@@ -10,13 +10,12 @@
 
 ### Training
 
-1. Download the ``light view time`` datasets [here](https://rargan.mpi-inf.mpg.de/dataset/ight_view_time.zip). Place it under folder dataset.
-
+1. Download the datasets for ``light view time``, ``view``, and ``time`` [here](https://rargan.mpi-inf.mpg.de/dataset/dataset.zip). 
 2. Train the network.
 
 #### Input arguments
 
-```bash
+```
     python train.py  --dataset    # path to dataset
                      --type       # xfields type light view time or view or time
                      --dim        # dimension of xfields
@@ -29,54 +28,42 @@
                      --savepath   # saving path 
 ```
 Example for light view time interpolation:
-```bash
-
+```
+python train.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 2 --savepath outputs\pomegranate
 ```
 Example for view interpolation:
-```bash
-
 ```
-Example for time interpolation:
-```bash
+python train.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\splash --nfg 8 --sigma 0.1 --num_n 2 --br 1
+```
+| <img src = "https://rargan.mpi-inf.mpg.de/dataset/splash/epoch_flows.gif" width='256'> | <img src = "https://rargan.mpi-inf.mpg.de/dataset/splash/epoch_recons.gif" width='256'> | <img src = "https://rargan.mpi-inf.mpg.de/dataset/splash/reference.png" width='256'> | 
+|------|:-----:|:-----:|
+| Generated flow in each epochs | Reconstructed view in each epoch| Reference |
 
+Example for time interpolation:
+```
+python train.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 8 --num_n 2 --savepath outputs\juice
 ```
     
 
 ### Testing 
 
-1. For the testing, please set the same input arguments:
+1. For the testing, please run the test.py and it will output a continuous interpolation along each xfields dimension:
 
-```bash
-    python test.py   --dataset   # path to dataset
-                     --type      # xfields type light view time or view or time
-                     --dim       # dimension of xfields
-                     --factor    # image downsampling factor
-                     --nfg       # capacity multiplier
-                     --sigma     # bandwidth parameter
-                     --br        # baseline ratio (in case of 2D light field)   
-                     --savepath  # saving path
-```
-and more input arguments
-```bash 
-                     --q               # query point  x y z for rendering where  0<=x<=dim[0] 0<=y<=dim[1] 0<=z<=dim[2]  
-                     --render_video    # set to 0 if you want to render a signle query point.
-                                       # set to 1 if you want to render a video from predefined path.
-                                       # set to 2 if you want to render a video from your desired path.                 
-                     --rendered_path  # path to .txt file containing rendering path                   
-```
 Example for light view time interpolation:
-```bash
-
+```
+python test.py --dataset dataset\light_view_time\pomegranate  --type light view time --dim 3 3 3 --factor 6 --nfg 4 --num_n 8 --savepath outputs\pomegranate
 ```
 Example for view interpolation:
-```bash
+```
+python test.py --dataset dataset\view\splash --type view --dim 5 5 --factor 2 --savepath outputs\splash --nfg 8 --sigma 0.1 --num_n 4 --br 1
 
 ```
+<img src = "https://rargan.mpi-inf.mpg.de/dataset/splash/rendered_view.gif" width="128">
+
 Example for time interpolation:
-```bash
-
 ```
-
-
+python test.py --dataset dataset\time\juice --type time --dim 3 --factor 6 --nfg 8 --num_n 2 --savepath outputs\juice
+```
+<img src = "https://rargan.mpi-inf.mpg.de/dataset/juice.gif" width="128">
 
    
